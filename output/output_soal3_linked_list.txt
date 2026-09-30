@@ -1,0 +1,212 @@
+========================================================
+   PROGRAM IMPLEMENTASI LINKED LIST QUEUE (SOAL 3B)    
+   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       
+   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      
+========================================================
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-enqueue: [SUKSES] Enqueue: Elemen 100 berhasil ditambahkan pada alamat memori [000001991D5F55D0]. Total elemen: 1.
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-enqueue: [SUKSES] Enqueue: Elemen 200 berhasil ditambahkan pada alamat memori [000001991D5F5610]. Total elemen: 2.
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-enqueue: [SUKSES] Enqueue: Elemen 300 berhasil ditambahkan pada alamat memori [000001991D5F56B0]. Total elemen: 3.
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-enqueue: [SUKSES] Enqueue: Elemen 400 berhasil ditambahkan pada alamat memori [000001991D5F5710]. Total elemen: 4.
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: 
+=== STATUS LINKED LIST QUEUE ===
+Jumlah Elemen Aktif (Count) : 4 node
+Alamat Node Front           : 000001991D5F55D0 (Nilai: 100)
+Alamat Node Rear            : 000001991D5F5710 (Nilai: 400)
+
+Alur Rantai Antrian (FIFO):
+[FRONT] -> [Data: 100 | Next: 000001991D5F5610] -> [Data: 200 | Next: 000001991D5F56B0] -> [Data: 300 | Next: 000001991D5F5710] -> [Data: 400 | Next: 0000000000000000] -> NULL [REAR]
+
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: 
+[HASIL PEEK] Elemen terdepan adalah: 100
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: [SUKSES] Dequeue: Elemen 100 berhasil dihapus dari depan antrian. Sisa elemen: 3.
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: [SUKSES] Dequeue: Elemen 200 berhasil dihapus dari depan antrian. Sisa elemen: 2.
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: 
+=== STATUS LINKED LIST QUEUE ===
+Jumlah Elemen Aktif (Count) : 2 node
+Alamat Node Front           : 000001991D5F56B0 (Nilai: 300)
+Alamat Node Rear            : 000001991D5F5710 (Nilai: 400)
+
+Alur Rantai Antrian (FIFO):
+[FRONT] -> [Data: 300 | Next: 000001991D5F5710] -> [Data: 400 | Next: 0000000000000000] -> NULL [REAR]
+
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-enqueue: [SUKSES] Enqueue: Elemen 500 berhasil ditambahkan pada alamat memori [000001991D5F5610]. Total elemen: 3.
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-enqueue: [SUKSES] Enqueue: Elemen 600 berhasil ditambahkan pada alamat memori [000001991D5F55D0]. Total elemen: 4.
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: 
+=== STATUS LINKED LIST QUEUE ===
+Jumlah Elemen Aktif (Count) : 4 node
+Alamat Node Front           : 000001991D5F56B0 (Nilai: 300)
+Alamat Node Rear            : 000001991D5F55D0 (Nilai: 600)
+
+Alur Rantai Antrian (FIFO):
+[FRONT] -> [Data: 300 | Next: 000001991D5F5710] -> [Data: 400 | Next: 000001991D5F5610] -> [Data: 500 | Next: 000001991D5F55D0] -> [Data: 600 | Next: 0000000000000000] -> NULL [REAR]
+
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: [SUKSES] Seluruh node memori berhasil didealokasikan (Queue Clear).
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: [INFO] Antrian kosong! Tidak ada data dalam Linked List.
+
+========================================================
+               MENU LINKED LIST QUEUE                   
+========================================================
+ 1. Tambah Elemen Baru (Enqueue)                       
+ 2. Ambil Elemen Terdepan (Dequeue)                    
+ 3. Lihat Elemen Terdepan (Peek)                       
+ 4. Tampilkan Seluruh Rantai Queue                     
+ 5. Kosongkan Seluruh Node (Clear)                     
+ 6. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-6]: [SUKSES] Seluruh node memori berhasil didealokasikan (Queue Clear).
+
+Terima kasih telah menggunakan program Linked List Queue. Selesai.

@@ -1,0 +1,306 @@
+========================================================
+   PROGRAM IMPLEMENTASI CIRCULAR QUEUE (SOAL 3A)       
+   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       
+   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      
+========================================================
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-insert: [SUKSES] INSERT 10 berhasil. Posisi Rear bergerak ke slot [1]. Total elemen = 1.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-insert: [SUKSES] INSERT 20 berhasil. Posisi Rear bergerak ke slot [2]. Total elemen = 2.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-insert: [SUKSES] INSERT 30 berhasil. Posisi Rear bergerak ke slot [3]. Total elemen = 3.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-insert: [SUKSES] INSERT 40 berhasil. Posisi Rear bergerak ke slot [4]. Total elemen = 4.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-insert: [SUKSES] INSERT 50 berhasil. Posisi Rear bergerak ke slot [5]. Total elemen = 5.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-insert: [SUKSES] INSERT 60 berhasil. Posisi Rear bergerak ke slot [6]. Total elemen = 6.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-insert: [SUKSES] INSERT 70 berhasil. Posisi Rear bergerak ke slot [7]. Total elemen = 7.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: 
+=== STATUS CIRCULAR QUEUE ===
+Ukuran Array Fisik (MAX) : 8 slot
+Kapasitas Maksimum Data  : 7 elemen (MAX - 1)
+Jumlah Elemen Aktif      : 7 elemen
+Posisi Front             : 0
+Posisi Rear              : 7
+Daftar Urutan Logis FIFO : [HEAD] 10 (slot [1]) -> 20 (slot [2]) -> 30 (slot [3]) -> 40 (slot [4]) -> 50 (slot [5]) -> 60 (slot [6]) -> 70 (slot [7]) [TAIL]
+
+Visualisasi Memori Array Fisik:
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Indeks|  [0]  |  [1]  |  [2]  |  [3]  |  [4]  |  [5]  |  [6]  |  [7]  |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Nilai |   -   |    10 |    20 |    30 |    40 |    50 |    60 |    70 |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Info  |   F   |       |       |       |       |       |       |   R   |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: 
+--- STATUS KONDISI ANTRIAN ---
+IsEmpty (Kosong) : TIDAK (False)
+IsFull (Penuh)   : YA (True)
+Jumlah Elemen    : 7 / 7
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-insert: [PERINGATAN] Circular Queue Penuh (OVERFLOW)! Kapasitas maksimum adalah 7 elemen.
+             Gagal menyisipkan nilai 999.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: [SUKSES] REMOVE berhasil. Elemen 10 dikeluarkan. Posisi Front bergerak ke slot [1]. Sisa elemen = 6.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: [SUKSES] REMOVE berhasil. Elemen 20 dikeluarkan. Posisi Front bergerak ke slot [2]. Sisa elemen = 5.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: [SUKSES] REMOVE berhasil. Elemen 30 dikeluarkan. Posisi Front bergerak ke slot [3]. Sisa elemen = 4.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: 
+=== STATUS CIRCULAR QUEUE ===
+Ukuran Array Fisik (MAX) : 8 slot
+Kapasitas Maksimum Data  : 7 elemen (MAX - 1)
+Jumlah Elemen Aktif      : 4 elemen
+Posisi Front             : 3
+Posisi Rear              : 7
+Daftar Urutan Logis FIFO : [HEAD] 40 (slot [4]) -> 50 (slot [5]) -> 60 (slot [6]) -> 70 (slot [7]) [TAIL]
+
+Visualisasi Memori Array Fisik:
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Indeks|  [0]  |  [1]  |  [2]  |  [3]  |  [4]  |  [5]  |  [6]  |  [7]  |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Nilai |   -   |   -   |   -   |   -   |    40 |    50 |    60 |    70 |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Info  |       |       |       |   F   |       |       |       |   R   |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-insert: [SUKSES] INSERT 80 berhasil. Posisi Rear bergerak ke slot [0]. Total elemen = 5.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: Masukkan bilangan bulat untuk di-insert: [SUKSES] INSERT 90 berhasil. Posisi Rear bergerak ke slot [1]. Total elemen = 6.
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: 
+=== STATUS CIRCULAR QUEUE ===
+Ukuran Array Fisik (MAX) : 8 slot
+Kapasitas Maksimum Data  : 7 elemen (MAX - 1)
+Jumlah Elemen Aktif      : 6 elemen
+Posisi Front             : 3
+Posisi Rear              : 1
+Daftar Urutan Logis FIFO : [HEAD] 40 (slot [4]) -> 50 (slot [5]) -> 60 (slot [6]) -> 70 (slot [7]) -> 80 (slot [0]) -> 90 (slot [1]) [TAIL]
+
+Visualisasi Memori Array Fisik:
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Indeks|  [0]  |  [1]  |  [2]  |  [3]  |  [4]  |  [5]  |  [6]  |  [7]  |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Nilai |    80 |    90 |   -   |   -   |    40 |    50 |    60 |    70 |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Info  |       |   R   |       |   F   |       |       |       |       |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: 
+--- STATUS KONDISI ANTRIAN ---
+IsEmpty (Kosong) : TIDAK (False)
+IsFull (Penuh)   : TIDAK (False)
+Jumlah Elemen    : 6 / 7
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: [SUKSES] Circular Queue berhasil dikosongkan (F = 0, R = 0).
+
+========================================================
+                 MENU PILIHAN CIRCULAR QUEUE            
+========================================================
+ 1. Sisipkan Elemen (Enqueue / INSERT)                 
+ 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            
+ 3. Tampilkan Status & Visualisasi Array Melingkar     
+ 4. Cek Kondisi (IsEmpty / IsFull / Noel)              
+ 5. Bersihkan Antrian (Clear / RESET)                  
+ 6. Keluar                                             
+========================================================
+Pilihan Anda [1-6]: 
+Terima kasih telah menggunakan program Circular Queue. Selesai.

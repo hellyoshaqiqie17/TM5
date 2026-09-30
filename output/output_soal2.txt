@@ -1,0 +1,275 @@
+========================================================
+   PROGRAM QUEUE DENGAN OPERASI STATISTIK (SOAL 2)     
+   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       
+   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      
+========================================================
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: Masukkan bilangan bulat untuk ditambahkan: [SUKSES] Elemen 45 berhasil masuk ke antrian (indeks: 0).
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: Masukkan bilangan bulat untuk ditambahkan: [SUKSES] Elemen 12 berhasil masuk ke antrian (indeks: 1).
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: Masukkan bilangan bulat untuk ditambahkan: [SUKSES] Elemen 88 berhasil masuk ke antrian (indeks: 2).
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: Masukkan bilangan bulat untuk ditambahkan: [SUKSES] Elemen 34 berhasil masuk ke antrian (indeks: 3).
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: Masukkan bilangan bulat untuk ditambahkan: [SUKSES] Elemen 91 berhasil masuk ke antrian (indeks: 4).
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: Masukkan bilangan bulat untuk ditambahkan: [SUKSES] Elemen 23 berhasil masuk ke antrian (indeks: 5).
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: Masukkan bilangan bulat untuk ditambahkan: [SUKSES] Elemen 70 berhasil masuk ke antrian (indeks: 6).
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: 
+=== STATUS ELEMEN ANTRIAN ===
+Kapasitas Array       : 8 elemen
+Jumlah Elemen Aktif   : 7 elemen
+Daftar Antrian (FIFO) : [FRONT] 45 -> 12 -> 88 -> 34 -> 91 -> 23 -> 70 [REAR]
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: 
+=======================================================
+        HASIL ANALISIS STATISTIK ELEMEN ANTRIAN        
+=======================================================
+  Jumlah Elemen (Count)     : 7 elemen
+  Nilai Total (Sum)         : 363
+  Nilai Rata-rata (Mean)    : 51.8571
+  Nilai Terbesar (Maximum)  : 91
+  Nilai Terkecil (Minimum)  : 12
+=======================================================
+
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: 
+[HASIL] Nilai Terbesar (Maksimum) dalam antrian adalah: 91
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: 
+[HASIL] Nilai Terkecil (Minimum) dalam antrian adalah: 12
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: [SUKSES] Elemen 45 berhasil dikeluarkan dari antrian.
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: 
+=== STATUS ELEMEN ANTRIAN ===
+Kapasitas Array       : 8 elemen
+Jumlah Elemen Aktif   : 6 elemen
+Daftar Antrian (FIFO) : [FRONT] 12 -> 88 -> 34 -> 91 -> 23 -> 70 [REAR]
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: 
+=======================================================
+        HASIL ANALISIS STATISTIK ELEMEN ANTRIAN        
+=======================================================
+  Jumlah Elemen (Count)     : 6 elemen
+  Nilai Total (Sum)         : 318
+  Nilai Rata-rata (Mean)    : 53.0000
+  Nilai Terbesar (Maximum)  : 91
+  Nilai Terkecil (Minimum)  : 12
+=======================================================
+
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: [SUKSES] Seluruh isi antrian berhasil dibersihkan (Clear).
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: 
+[INFO] Antrian kosong! Tidak ada elemen untuk dianalisis statistiknya.
+
+========================================================
+                       MENU UTAMA                       
+========================================================
+ 1. Masukkan Data ke Antrian (Enqueue)                 
+ 2. Hapus Data dari Antrian (Dequeue)                  
+ 3. Tampilkan Seluruh Data Antrian (Tampil)            
+ 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) 
+ 5. Cari Nilai Terbesar Saja (Maksimum)                
+ 6. Cari Nilai Terkecil Saja (Minimum)                 
+ 7. Bersihkan Seluruh Antrian (Clear)                  
+ 8. Keluar dari Program                                
+========================================================
+Pilihan Anda [1-8]: 
+Terima kasih telah menggunakan program statistik antrian. Selesai.

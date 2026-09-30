@@ -1,0 +1,243 @@
+========================================================
+   PROGRAM IMPLEMENTASI QUEUE LINEAR ARRAY (SOAL 1)    
+   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       
+   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      
+========================================================
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: Masukkan nilai bilangan bulat yang akan ditambahkan: [SUKSES] Elemen 15 berhasil masuk ke antrian (posisi indeks: 0).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: Masukkan nilai bilangan bulat yang akan ditambahkan: [SUKSES] Elemen 28 berhasil masuk ke antrian (posisi indeks: 1).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: Masukkan nilai bilangan bulat yang akan ditambahkan: [SUKSES] Elemen 42 berhasil masuk ke antrian (posisi indeks: 2).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: Masukkan nilai bilangan bulat yang akan ditambahkan: [SUKSES] Elemen 99 berhasil masuk ke antrian (posisi indeks: 3).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: Masukkan nilai bilangan bulat yang akan ditambahkan: [SUKSES] Elemen 10 berhasil masuk ke antrian (posisi indeks: 4).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: 
+=== STATUS ELEMEN ANTRIAN (LINEAR ARRAY) ===
+Kapasitas Maksimum : 8 elemen
+Jumlah Elemen Saat Ini: 5 elemen
+Indeks Head (Depan)   : 0 (Nilai: 15)
+Indeks Tail (Belakang): 4 (Nilai: 10)
+Daftar Antrian: [FRONT] 15 -> 28 -> 42 -> 99 -> 10 [REAR]
+Slot Memori Array:
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Indeks|  [0]  |  [1]  |  [2]  |  [3]  |  [4]  |  [5]  |  [6]  |  [7]  |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Nilai |    15 |    28 |    42 |    99 |    10 |   -   |   -   |   -   |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: [SUKSES] Elemen 15 berhasil keluar dari antrian.
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: [SUKSES] Elemen 28 berhasil keluar dari antrian.
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: 
+=== STATUS ELEMEN ANTRIAN (LINEAR ARRAY) ===
+Kapasitas Maksimum : 8 elemen
+Jumlah Elemen Saat Ini: 3 elemen
+Indeks Head (Depan)   : 0 (Nilai: 42)
+Indeks Tail (Belakang): 2 (Nilai: 10)
+Daftar Antrian: [FRONT] 42 -> 99 -> 10 [REAR]
+Slot Memori Array:
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Indeks|  [0]  |  [1]  |  [2]  |  [3]  |  [4]  |  [5]  |  [6]  |  [7]  |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Nilai |    42 |    99 |    10 |   -   |   -   |   -   |   -   |   -   |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: Masukkan nilai bilangan bulat yang akan ditambahkan: [SUKSES] Elemen 55 berhasil masuk ke antrian (posisi indeks: 3).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: Masukkan nilai bilangan bulat yang akan ditambahkan: [SUKSES] Elemen 77 berhasil masuk ke antrian (posisi indeks: 4).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: Masukkan nilai bilangan bulat yang akan ditambahkan: [SUKSES] Elemen 88 berhasil masuk ke antrian (posisi indeks: 5).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: Masukkan nilai bilangan bulat yang akan ditambahkan: [SUKSES] Elemen 95 berhasil masuk ke antrian (posisi indeks: 6).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: Masukkan nilai bilangan bulat yang akan ditambahkan: [SUKSES] Elemen 100 berhasil masuk ke antrian (posisi indeks: 7).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: 
+=== STATUS ELEMEN ANTRIAN (LINEAR ARRAY) ===
+Kapasitas Maksimum : 8 elemen
+Jumlah Elemen Saat Ini: 8 elemen
+Indeks Head (Depan)   : 0 (Nilai: 42)
+Indeks Tail (Belakang): 7 (Nilai: 100)
+Daftar Antrian: [FRONT] 42 -> 99 -> 10 -> 55 -> 77 -> 88 -> 95 -> 100 [REAR]
+Slot Memori Array:
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Indeks|  [0]  |  [1]  |  [2]  |  [3]  |  [4]  |  [5]  |  [6]  |  [7]  |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Nilai |    42 |    99 |    10 |    55 |    77 |    88 |    95 |   100 |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: [SUKSES] Seluruh isi antrian berhasil dibersihkan (Clear).
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: [INFO] Antrian kosong! Tidak ada data untuk ditampilkan.
+
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
+Pilihan Anda [1-5]: 
+Terima kasih telah menggunakan program antrian. Program selesai.
