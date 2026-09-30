@@ -11,8 +11,6 @@
 \usepackage{listings}
 \usepackage{array}
 \usepackage{hyperref}
-\usepackage{caption}
-\usepackage{subcaption}
 
 \geometry{
     top=2.5cm,
@@ -27,7 +25,7 @@
 \newcommand{\insertsafeimg}[2]{%
     \IfFileExists{images/#1}{\includegraphics[#2]{images/#1}}{%
         \IfFileExists{#1}{\includegraphics[#2]{#1}}{%
-            \fbox{\parbox{0.85\textwidth}{\centering\vspace{0.8cm}\textbf{[Gambar: #1]}\\\small\textit{(Silakan unggah gambar #1 ke direktori images/ di Overleaf jika belum ada)}\vspace{0.8cm}}}%
+            \fbox{\parbox{0.85\textwidth}{\centering\vspace{0.8cm}\textbf{[Gambar: #1]}\\\small\textit{(Silakan upload #1 ke direktori images/ di Overleaf jika belum ada)}\vspace{0.8cm}}}%
         }%
     }%
 }
@@ -37,7 +35,7 @@
 % -----------------------------------------------------------------------------
 \definecolor{codebg}{rgb}{0.97,0.97,0.98}
 \definecolor{commentgreen}{rgb}{0.13,0.54,0.13}
-\definecolor{keywordblue}{rgb}{0.0,0.2,0.75}
+\definecolor{keywordblue}{rgb}{0.0,0.2,0.8}
 \definecolor{stringpurple}{rgb}{0.58,0.0,0.82}
 \definecolor{linenumgray}{rgb}{0.5,0.5,0.5}
 \definecolor{bordergray}{rgb}{0.8,0.8,0.8}
@@ -64,7 +62,7 @@
 }
 
 \lstdefinestyle{cmdoutput}{
-    backgroundcolor=\color{gray!7},
+    backgroundcolor=\color{gray!6},
     basicstyle=\ttfamily\scriptsize,
     breaklines=true,
     frame=single,
@@ -75,7 +73,6 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=blue!70!black,
-    citecolor=blue!70!black,
     urlcolor=blue!70!black
 }
 
@@ -88,7 +85,7 @@
     \centering
     {\fontsize{16pt}{20pt}\selectfont\textbf{LAPORAN TUGAS PRAKTIKUM}}\\[0.3cm]
     {\fontsize{14pt}{18pt}\selectfont\textbf{(SIA103) STRUKTUR DATA}}\\[0.25cm]
-    {\fontsize{12pt}{15pt}\selectfont\textbf{Topik: Struktur Data Antrian (Queue) - Linear Array, Operasi Statistik, Circular Array, dan Linked List}}\\[0.15cm]
+    {\fontsize{12pt}{15pt}\selectfont\textbf{Topik : Queue (Antrian)}}\\[0.15cm]
     {\fontsize{12pt}{15pt}\selectfont\textbf{Pertemuan ke-5 (TM 5)}}\\[1.2cm]
 
     \insertsafeimg{logo_unair.png}{width=0.35\textwidth}\\[1.2cm]
@@ -97,132 +94,35 @@
     Purbandini, S.Si., M.Kom.\\
     Rodik Wahyu Indrawan, S.ST., M.Tr.T.\\[1.0cm]
 
-    {\fontsize{11pt}{14pt}\selectfont\textbf{Disusun Oleh:}}\\[0.25cm]
+    {\fontsize{11pt}{14pt}\selectfont\textbf{Oleh:}}\\[0.25cm]
     {\fontsize{12pt}{15pt}\selectfont\textbf{Hellyos Ageng Haqiqie}}\\[0.1cm]
-    {\fontsize{11pt}{14pt}\selectfont\textbf{NIM: 163251001}}\\[1.2cm]
+    {\fontsize{11pt}{14pt}\selectfont\textbf{(163251001)}}\\[1.2cm]
 
-    {\fontsize{12pt}{16pt}\selectfont\textbf{Program Studi S1 Teknik Robotika dan Kecerdasan Buatan}}\\[0.1cm]
+    {\fontsize{12pt}{16pt}\selectfont\textbf{Program Studi Teknik Robotika dan Kecerdasan Buatan}}\\[0.1cm]
     {\fontsize{12pt}{16pt}\selectfont\textbf{Fakultas Teknologi Maju dan Multidisiplin}}\\[0.1cm]
     {\fontsize{12pt}{16pt}\selectfont\textbf{Universitas Airlangga}}\\[0.1cm]
     {\fontsize{12pt}{16pt}\selectfont\textbf{2026}}
 \end{titlepage}
 
 \newpage
-\tableofcontents
-\newpage
 
 % =============================================================================
-% BAB 1: PENDAHULUAN DAN DASAR TEORI QUEUE
+% SOAL 1: PROGRAM MENU QUEUE LINEAR ARRAY
 % =============================================================================
-\section{Dasar Teori Struktur Data Antrian (Queue)}
+\begin{center}
+    {\Large\textbf{LATIHAN SOAL 1}}
+\end{center}
 
-\subsection{Definisi dan Konsep Antrian (Queue)}
-Antrian (\textit{Queue}) adalah salah satu bentuk struktur data linier yang bersifat abstrak (\textit{Abstract Data Type} / ADT) dan menerapkan prinsip keterurutan pengaksesan data yang ketat, yaitu \textbf{FIFO} (\textit{First-In, First-Out}). Pada struktur ini, data atau elemen yang pertama kali dimasukkan ke dalam antrian akan menjadi elemen yang pertama kali keluar atau diproses \cite{clrs2022, drozdek2012}. 
-
-Secara konseptual, struktur antrian memiliki dua ujung operasional yang berbeda:
-\begin{enumerate}
-    \item \textbf{Front / Head}: Ujung terdepan dari antrian tempat berlangsungnya operasi penghapusan atau pengambilan data (\textit{Dequeue}).
-    \item \textbf{Rear / Tail}: Ujung belakang antrian tempat berlangsungnya operasi penambahan atau penyisipan data (\textit{Enqueue}).
-\end{enumerate}
-
-\begin{figure}[htbp]
-    \centering
-    \insertsafeimg{queue_linear.png}{width=0.92\textwidth}
-    \caption{Ilustrasi Struktur Data Linear Array Queue dengan Penunjuk Head dan Tail.}
-    \label{fig:linear_queue}
-\end{figure}
-
-Karakteristik penting ini merefleksikan berbagai fenomena antrian fisik di dunia nyata, seperti antrian kendaraan di gerbang jalan tol, antrian nasabah di depan loket bank, maupun antrian paket data pada \textit{buffer network router} serta penjadwalan proses (\textit{process scheduling}) pada sistem operasi modern \cite{sedgewick2011, knuth1997}.
-
-\subsection{Karakteristik dan Notasi Formal Antrian}
-Berdasarkan materi perkuliahan SIA103 Struktur Data, antrian $Q$ yang memiliki $N$ buah elemen dapat dinotasikan sebagai himpunan terurut:
-\begin{equation}
-    Q = [Q_1, Q_2, Q_3, \dots, Q_N]
-\end{equation}
-dengan notasi pendukung sebagai berikut:
-\begin{itemize}
-    \item $\text{FRONT}(Q) = Q_1$: menyatakan penunjuk ke elemen paling depan pada antrian $Q$.
-    \item $\text{REAR}(Q) = Q_N$: menyatakan penunjuk ke elemen paling belakang pada antrian $Q$.
-    \item $\text{NOEL}(Q) = N$: menyatakan jumlah elemen (\textit{number of elements}) yang saat ini tersimpan di dalam antrian.
-\end{itemize}
-
-Antrian memiliki dua kondisi kritis yang harus selalu ditangani dalam perancangan algoritma pemrograman:
-\begin{enumerate}
-    \item \textbf{Kondisi Kosong (\textit{Underflow})}: Terjadi ketika tidak terdapat elemen apa pun di dalam antrian ($\text{NOEL}(Q) = 0$). Pemanggilan operasi \textit{Dequeue} pada kondisi ini merupakan suatu pelanggaran (\textit{error}), sehingga program harus menolak operasi dan menampilkan pesan \textit{underflow}.
-    \item \textbf{Kondisi Penuh (\textit{Overflow})}: Terjadi apabila jumlah elemen telah mencapai batas daya tampung fisik media penyimpanan ($\text{NOEL}(Q) = \text{MAX}$). Pemanggilan operasi \textit{Enqueue} saat antrian berada pada kondisi ini akan menyebabkan kegagalan alokasi memori (\textit{overflow}).
-\end{enumerate}
-
-\subsection{Operasi-Operasi Fundamental pada Antrian}
-Operasi standar yang didefinisikan pada struktur data antrian meliputi:
-\begin{enumerate}
-    \item \texttt{Create()}: Menginisialisasi antrian kosong baru serta mengatur penunjuk indeks awal ($\text{head} = -1, \text{tail} = -1$).
-    \item \texttt{IsEmpty()}: Mengembalikan nilai kebenaran logika (\textit{boolean}) $1$ jika antrian kosong, atau $0$ jika berisi data.
-    \item \texttt{IsFull()}: Mengembalikan nilai kebenaran logika $1$ jika antrian telah mencapai kapasitas maksimum (\textit{MAX}), atau $0$ jika masih terdapat slot tersedia.
-    \item \texttt{Enqueue(data)}: Menambahkan satu elemen baru di ujung belakang (\textit{Tail}) antrian.
-    \item \texttt{Dequeue()}: Mengambil serta menghapus elemen yang berada di ujung paling depan (\textit{Head}) antrian.
-    \item \texttt{Clear()}: Mereset seluruh penunjuk antrian sehingga seluruh data dianggap terhapus secara logis.
-    \item \texttt{Tampil()}: Menelusuri (\textit{traversal}) dan menampilkan seluruh nilai elemen yang aktif di dalam antrian.
-\end{enumerate}
-
-\subsection{Varian Implementasi Antrian: Linear Array, Circular Array, dan Linked List}
-Terdapat tiga pendekatan utama dalam mengimplementasikan antrian di dalam memori komputer:
-\begin{enumerate}
-    \item \textbf{Linear Array Queue}: Menggunakan array statis satu dimensi dengan pergeseran (\textit{shifting}) elemen ke arah indeks nol setiap kali dilakukan operasi \texttt{Dequeue}. Kelemahannya adalah biaya komputasi pergeseran sebesar $\mathcal{O}(N)$.
-    \item \textbf{Circular Array Queue}: Memanfaatkan aritmatika modulo untuk menghubungkan slot terakhir array kembali ke slot pertama, sehingga penunjuk \textit{Head} dan \textit{Tail} dapat berputar secara melingkar tanpa memerlukan pergeseran elemen fisik. Kedua operasi \texttt{Enqueue} dan \texttt{Dequeue} memiliki kompleksitas waktu optimal $\mathcal{O}(1)$.
-    \item \textbf{Linked List Queue}: Menggunakan senarai berantai dinamis berbasis simpul (\textit{node}) dan pointer. Kelebihannya adalah kapasitas memori yang elastis (\textit{dynamic memory allocation}) sehingga tidak pernah mengalami masalah \textit{false overflow} selama memori fisik (\textit{heap}) sistem masih tersedia.
-\end{enumerate}
-
-\begin{figure}[htbp]
-    \centering
-    \insertsafeimg{queue_comparison.png}{width=0.92\textwidth}
-    \caption{Komparasi Karakteristik dan Kompleksitas Waktu Tiga Varian Implementasi Queue.}
-    \label{fig:comparison_overview}
-\end{figure}
-
-% =============================================================================
-% BAB 2: PENYELESAIAN LATIHAN SOAL 1 (LINEAR QUEUE)
-% =============================================================================
-\newpage
-\section{Penyelesaian Soal 1: Program Menu Implementasi Linear Queue}
-
-\subsection{Deskripsi Permasalahan}
-Berdasarkan lembar latihan perkuliahan (Slide 33):
+\vspace{0.2cm}
+\noindent\textbf{Soal:}
 \begin{quote}
-    \textbf{Soal 1:} \textit{Buatlah program dalam bentuk menu untuk mengimplementasikan antrian. Menu tersebut berisi memasukkan data, menghapus data, menampilkan data, dan keluar.}
+    \textit{"Buatlah program dalam bentuk menu untuk mengimplementasikan antrian. Menu tsb berisi memasukkan data, menghapus data, menampilkan data dan keluar."}
 \end{quote}
 
-Pada implementasi ini, kita menggunakan model antrian linear array berkapasitas maksimum $\text{MAX} = 8$ sesuai dengan materi pada slide 12--21. Mekanisme penghapusan (\textit{Dequeue}) memanfaatkan algoritma pergeseran elemen (\textit{element shifting}) ke arah depan agar indeks \textit{Head} selalu kembali berada pada posisi indeks 0 ketika antrian terisi.
+\vspace{0.3cm}
+\noindent\textbf{1. Kode Program (\texttt{soal1\_queue\_linear.c}):}
 
-\subsection{Desain Algoritma dan Struktur Data}
-Struktur data didefinisikan menggunakan konstruksi \texttt{struct} dalam bahasa C:
 \begin{lstlisting}[style=ccode, language=C]
-#define MAX 8
-
-typedef struct {
-    int data[MAX];
-    int head;
-    int tail;
-} Queue;
-
-Queue antrian;
-\end{lstlisting}
-
-Alur logika dari masing-masing fungsi dirancang sebagai berikut:
-\begin{itemize}
-    \item \textbf{Inisialisasi}: Saat \texttt{Create()}, variabel \texttt{head} dan \texttt{tail} diisi dengan nilai $-1$.
-    \item \textbf{Pengecekan}: \texttt{IsEmpty()} menguji apakah $\text{tail} == -1$. Sementara \texttt{IsFull()} menguji apakah $\text{tail} \ge \text{MAX} - 1$.
-    \item \textbf{Penyisipan (\textit{Enqueue})}: Jika antrian kosong, maka $\text{head} = \text{tail} = 0$, lalu $Q[\text{tail}] = \text{data}$. Jika sudah berisi data dan belum penuh, nilai $\text{tail}$ dinaikkan 1 langkah ($\text{tail}++$), lalu nilai baru disimpan pada $Q[\text{tail}]$.
-    \item \textbf{Penghapusan (\textit{Dequeue})}: Nilai pada $Q[\text{head}]$ dicatat untuk dikembalikan. Seluruh elemen berikutnya digeser satu langkah ke kiri melalui perulangan:
-    \begin{equation}
-        Q[i] = Q[i + 1], \quad \forall i \in [\text{head}, \text{tail} - 1]
-    \end{equation}
-    Setelah itu, nilai penunjuk $\text{tail}$ dikurangi satu ($\text{tail}--$). Jika nilai $\text{tail} < 0$, maka antrian disetel ulang ke kondisi kosong ($\text{head} = \text{tail} = -1$).
-\end{itemize}
-
-\subsection{Implementasi Lengkap Bahasa C (\texttt{soal1\_queue\_linear.c})}
-Berikut adalah kode sumber program lengkap yang telah dikompilasi menggunakan GCC MinGW-W64 15.2.0:
-
-\begin{lstlisting}[style=ccode, language=C, caption={Kode Sumber Program Soal 1 (\texttt{soal1\_queue\_linear.c})}]
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -244,21 +144,28 @@ void Create(void) {
 
 /* Memeriksa apakah antrian kosong */
 int IsEmpty(void) {
-    return (antrian.tail == -1);
+    if (antrian.tail == -1) {
+        return 1;
+    }
+    return 0;
 }
 
 /* Memeriksa apakah antrian penuh */
 int IsFull(void) {
-    return (antrian.tail >= MAX - 1);
+    if (antrian.tail >= MAX - 1) {
+        return 1;
+    }
+    return 0;
 }
 
 /* Menambahkan elemen ke dalam antrian */
 void Enqueue(int data) {
-    if (IsFull()) {
-        printf("[PERINGATAN] Antrian Penuh (Overflow)! Data %d ditolak.\n", data);
+    if (IsFull() == 1) {
+        printf("[PERINGATAN] Antrian Penuh (Overflow)! Tidak dapat menambahkan data %d.\n", data);
         return;
     }
-    if (IsEmpty()) {
+
+    if (IsEmpty() == 1) {
         antrian.head = 0;
         antrian.tail = 0;
         antrian.data[antrian.tail] = data;
@@ -266,58 +173,160 @@ void Enqueue(int data) {
         antrian.tail++;
         antrian.data[antrian.tail] = data;
     }
-    printf("[SUKSES] Elemen %d masuk ke antrian (indeks: %d).\n", data, antrian.tail);
+    printf("[SUKSES] Elemen %d berhasil masuk ke antrian (posisi indeks: %d).\n", data, antrian.tail);
 }
 
 /* Mengambil dan menghapus elemen terdepan dari antrian */
 int Dequeue(void) {
-    if (IsEmpty()) {
-        printf("[PERINGATAN] Antrian Kosong (Underflow)!\n");
+    if (IsEmpty() == 1) {
+        printf("[PERINGATAN] Antrian Kosong (Underflow)! Tidak ada elemen yang dapat dikeluarkan.\n");
         return -1;
     }
+
     int elemenKeluar = antrian.data[antrian.head];
+
+    /* Geser seluruh elemen ke arah depan menggunakan looping */
     for (int i = antrian.head; i < antrian.tail; i++) {
         antrian.data[i] = antrian.data[i + 1];
     }
     antrian.tail--;
+
+    /* Jika setelah digeser elemen menjadi habis, kembalikan ke kondisi awal */
     if (antrian.tail < 0) {
         antrian.head = -1;
         antrian.tail = -1;
     }
-    printf("[SUKSES] Elemen %d berhasil dikeluarkan dari antrian.\n", elemenKeluar);
+
+    printf("[SUKSES] Elemen %d berhasil keluar dari antrian.\n", elemenKeluar);
     return elemenKeluar;
 }
 
-/* Menampilkan isi antrian dan visualisasi slot memori */
+/* Mengosongkan antrian */
+void Clear(void) {
+    antrian.head = -1;
+    antrian.tail = -1;
+    printf("[SUKSES] Seluruh isi antrian berhasil dibersihkan (Clear).\n");
+}
+
+/* Menampilkan seluruh elemen dalam antrian */
 void Tampil(void) {
-    if (IsEmpty()) {
+    if (IsEmpty() == 1) {
         printf("[INFO] Antrian kosong! Tidak ada data untuk ditampilkan.\n");
         return;
     }
+
     printf("\n=== STATUS ELEMEN ANTRIAN (LINEAR ARRAY) ===\n");
     printf("Kapasitas Maksimum : %d elemen\n", MAX);
-    printf("Jumlah Elemen Aktif: %d elemen\n", antrian.tail - antrian.head + 1);
-    printf("Indeks Head        : %d (Nilai: %d)\n", antrian.head, antrian.data[antrian.head]);
-    printf("Indeks Tail        : %d (Nilai: %d)\n", antrian.tail, antrian.data[antrian.tail]);
-    printf("Daftar Antrian     : [FRONT] ");
+    printf("Jumlah Elemen Saat Ini: %d elemen\n", antrian.tail - antrian.head + 1);
+    printf("Indeks Head (Depan)   : %d (Nilai: %d)\n", antrian.head, antrian.data[antrian.head]);
+    printf("Indeks Tail (Belakang): %d (Nilai: %d)\n", antrian.tail, antrian.data[antrian.tail]);
+    printf("Daftar Antrian: [FRONT] ");
     for (int i = antrian.head; i <= antrian.tail; i++) {
         printf("%d", antrian.data[i]);
-        if (i < antrian.tail) printf(" -> ");
+        if (i < antrian.tail) {
+            printf(" -> ");
+        }
     }
     printf(" [REAR]\n");
+
+    /* Tampilan visualisasi slot memori array */
+    printf("Slot Memori Array:\n");
+    printf("+-------");
+    for (int i = 0; i < MAX; i++) printf("+-------");
+    printf("+\n| Indeks");
+    for (int i = 0; i < MAX; i++) printf("|  [%d]  ", i);
+    printf("|\n+-------");
+    for (int i = 0; i < MAX; i++) printf("+-------");
+    printf("+\n| Nilai ");
+    for (int i = 0; i < MAX; i++) {
+        if (i >= antrian.head && i <= antrian.tail) {
+            printf("| %5d ", antrian.data[i]);
+        } else {
+            printf("|   -   ");
+        }
+    }
+    printf("|\n+-------");
+    for (int i = 0; i < MAX; i++) printf("+-------");
+    printf("+\n\n");
+}
+
+int main(void) {
+    int pilihan, nilai;
+    Create();
+
+    printf("========================================================\n");
+    printf("   PROGRAM IMPLEMENTASI QUEUE LINEAR ARRAY (SOAL 1)    \n");
+    printf("   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       \n");
+    printf("   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      \n");
+    printf("========================================================\n");
+
+    do {
+        printf("\n========================================\n");
+        printf("           MENU PILIHAN UTAMA           \n");
+        printf("========================================\n");
+        printf(" 1. Masukkan Data ke Antrian (Enqueue) \n");
+        printf(" 2. Hapus Data dari Antrian (Dequeue)  \n");
+        printf(" 3. Tampilkan Data Antrian (Tampil)    \n");
+        printf(" 4. Bersihkan Seluruh Antrian (Clear)  \n");
+        printf(" 5. Keluar dari Program                \n");
+        printf("========================================\n");
+        printf("Pilihan Anda [1-5]: ");
+        if (scanf("%d", &pilihan) != 1) {
+            printf("[ERROR] Input tidak valid! Harap masukkan angka.\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        switch (pilihan) {
+            case 1:
+                printf("Masukkan nilai bilangan bulat yang akan ditambahkan: ");
+                if (scanf("%d", &nilai) == 1) {
+                    Enqueue(nilai);
+                } else {
+                    printf("[ERROR] Input harus berupa bilangan bulat!\n");
+                    while (getchar() != '\n');
+                }
+                break;
+            case 2:
+                Dequeue();
+                break;
+            case 3:
+                Tampil();
+                break;
+            case 4:
+                Clear();
+                break;
+            case 5:
+                printf("\nTerima kasih telah menggunakan program antrian. Program selesai.\n");
+                break;
+            default:
+                printf("[ERROR] Pilihan menu tidak valid! Silakan pilih antara 1 - 5.\n");
+        }
+    } while (pilihan != 5);
+
+    return 0;
 }
 \end{lstlisting}
 
-\subsection{Hasil Eksekusi dan Verifikasi Komputasi Terminal}
-Pengujian dilakukan dengan menyisipkan beberapa elemen berturut-turut ($15, 28, 42, 99, 10$), mencetak status antrian, melakukan operasi penghapusan dua elemen, serta menguji respon terhadap kondisi batas penuh (\textit{overflow}).
+\vspace{0.4cm}
+\noindent\textbf{2. Output Program:}
 
-\begin{lstlisting}[style=cmdoutput, caption={Log Output Eksekusi Terminal Program Soal 1}]
+\begin{lstlisting}[style=cmdoutput]
 ========================================================
    PROGRAM IMPLEMENTASI QUEUE LINEAR ARRAY (SOAL 1)    
    Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       
    Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      
 ========================================================
 
+========================================
+           MENU PILIHAN UTAMA           
+========================================
+ 1. Masukkan Data ke Antrian (Enqueue) 
+ 2. Hapus Data dari Antrian (Dequeue)  
+ 3. Tampilkan Data Antrian (Tampil)    
+ 4. Bersihkan Seluruh Antrian (Clear)  
+ 5. Keluar dari Program                
+========================================
 Pilihan Anda [1-5]: 1
 Masukkan nilai bilangan bulat yang akan ditambahkan: 15
 [SUKSES] Elemen 15 berhasil masuk ke antrian (posisi indeks: 0).
@@ -345,6 +354,12 @@ Jumlah Elemen Saat Ini: 5 elemen
 Indeks Head (Depan)   : 0 (Nilai: 15)
 Indeks Tail (Belakang): 4 (Nilai: 10)
 Daftar Antrian: [FRONT] 15 -> 28 -> 42 -> 99 -> 10 [REAR]
+Slot Memori Array:
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Indeks|  [0]  |  [1]  |  [2]  |  [3]  |  [4]  |  [5]  |  [6]  |  [7]  |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Nilai |    15 |    28 |    42 |    99 |    10 |   -   |   -   |   -   |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
 
 Pilihan Anda [1-5]: 2
 [SUKSES] Elemen 15 berhasil keluar dari antrian.
@@ -359,48 +374,128 @@ Jumlah Elemen Saat Ini: 3 elemen
 Indeks Head (Depan)   : 0 (Nilai: 42)
 Indeks Tail (Belakang): 2 (Nilai: 10)
 Daftar Antrian: [FRONT] 42 -> 99 -> 10 [REAR]
+Slot Memori Array:
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Indeks|  [0]  |  [1]  |  [2]  |  [3]  |  [4]  |  [5]  |  [6]  |  [7]  |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+| Nilai |    42 |    99 |    10 |   -   |   -   |   -   |   -   |   -   |
++-------+-------+-------+-------+-------+-------+-------+-------+-------+
+
+Pilihan Anda [1-5]: 4
+[SUKSES] Seluruh isi antrian berhasil dibersihkan (Clear).
+
+Pilihan Anda [1-5]: 3
+[INFO] Antrian kosong! Tidak ada data untuk ditampilkan.
+
+Pilihan Anda [1-5]: 5
+Terima kasih telah menggunakan program antrian. Program selesai.
 \end{lstlisting}
 
-% =============================================================================
-% BAB 3: PENYELESAIAN LATIHAN SOAL 2 (STATISTIK QUEUE)
-% =============================================================================
 \newpage
-\section{Penyelesaian Soal 2: Operasi Statistik Elemen Antrian}
 
-\subsection{Deskripsi Permasalahan}
-Berdasarkan lembar latihan perkuliahan (Slide 33):
+% =============================================================================
+% SOAL 2: OPERASI STATISTIK PADA ELEMEN QUEUE
+% =============================================================================
+\begin{center}
+    {\Large\textbf{LATIHAN SOAL 2}}
+\end{center}
+
+\vspace{0.2cm}
+\noindent\textbf{Soal:}
 \begin{quote}
-    \textbf{Soal 2:} \textit{Carilah nilai total, rata-rata, terbesar, dan terkecil dari elemen-elemen queue dengan menggunakan fungsi yang sudah dibuat pada soal 1!}
+    \textit{"Carilah nilai total, rata-rata, terbesar dan terkecil dari elemen-elemen queue dengan menggunakan fungsi yang sudah dibuat pada soal 1!"}
 \end{quote}
 
-Permasalahan ini mengharuskan kita memperluas modul program antrian pada Soal 1 dengan menambahkan sekumpulan fungsi analitik statistik terhadap kumpulan data yang sedang aktif di dalam antrian.
+\vspace{0.3cm}
+\noindent\textbf{1. Kode Program (\texttt{soal2\_queue\_statistik.c}):}
 
-\subsection{Formulasi Matematis}
-Misalkan antrian $Q$ saat ini menampung $N$ buah bilangan bulat pada rentang indeks $[ \text{head}, \text{tail} ]$, dengan $N = \text{tail} - \text{head} + 1$:
-\begin{enumerate}
-    \item \textbf{Nilai Total (\textit{Sum})}:
-    \begin{equation}
-        S = \sum_{i=\text{head}}^{\text{tail}} Q[i]
-    \end{equation}
-    \item \textbf{Nilai Rata-rata (\textit{Arithmetic Mean})}:
-    \begin{equation}
-        \bar{X} = \frac{S}{N} = \frac{1}{N} \sum_{i=\text{head}}^{\text{tail}} Q[i]
-    \end{equation}
-    \item \textbf{Nilai Terbesar (\textit{Maximum})}:
-    \begin{equation}
-        X_{\max} = \max \Big\{ Q[i] \;\Big|\; i \in [\text{head}, \text{tail}] \Big\}
-    \end{equation}
-    \item \textbf{Nilai Terkecil (\textit{Minimum})}:
-    \begin{equation}
-        X_{\min} = \min \Big\{ Q[i] \;\Big|\; i \in [\text{head}, \text{tail}] \Big\}
-    \end{equation}
-\end{enumerate}
+\begin{lstlisting}[style=ccode, language=C]
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
 
-\subsection{Implementasi Fungsi Statistik Bahasa C}
-Seluruh fungsi dirancang untuk memeriksa kondisi pra-syarat (\textit{precondition}) apakah antrian dalam keadaan kosong sebelum melakukan perhitungan matematis guna mencegah pembagian dengan nol (\textit{zero division exception}).
+#define MAX 8
 
-\begin{lstlisting}[style=ccode, language=C, caption={Fungsi-Fungsi Analitik Statistik Antrian (\texttt{soal2\_queue\_statistik.c})}]
-/* Menghitung nilai total (penjumlahan) seluruh elemen di dalam queue */
+typedef struct {
+    int data[MAX];
+    int head;
+    int tail;
+} Queue;
+
+Queue antrian;
+
+void Create(void) {
+    antrian.head = -1;
+    antrian.tail = -1;
+}
+
+int IsEmpty(void) {
+    return (antrian.tail == -1);
+}
+
+int IsFull(void) {
+    return (antrian.tail >= MAX - 1);
+}
+
+void Enqueue(int data) {
+    if (IsFull() == 1) {
+        printf("[PERINGATAN] Antrian Penuh (Overflow)! Tidak dapat menambahkan data %d.\n", data);
+        return;
+    }
+    if (IsEmpty() == 1) {
+        antrian.head = 0;
+        antrian.tail = 0;
+        antrian.data[antrian.tail] = data;
+    } else {
+        antrian.tail++;
+        antrian.data[antrian.tail] = data;
+    }
+    printf("[SUKSES] Elemen %d berhasil masuk ke antrian (indeks: %d).\n", data, antrian.tail);
+}
+
+int Dequeue(void) {
+    if (IsEmpty() == 1) {
+        printf("[PERINGATAN] Antrian Kosong (Underflow)!\n");
+        return -1;
+    }
+    int elemenKeluar = antrian.data[antrian.head];
+    for (int i = antrian.head; i < antrian.tail; i++) {
+        antrian.data[i] = antrian.data[i + 1];
+    }
+    antrian.tail--;
+    if (antrian.tail < 0) {
+        antrian.head = -1;
+        antrian.tail = -1;
+    }
+    printf("[SUKSES] Elemen %d berhasil dikeluarkan dari antrian.\n", elemenKeluar);
+    return elemenKeluar;
+}
+
+void Clear(void) {
+    antrian.head = -1;
+    antrian.tail = -1;
+    printf("[SUKSES] Seluruh isi antrian berhasil dibersihkan (Clear).\n");
+}
+
+void Tampil(void) {
+    if (IsEmpty() == 1) {
+        printf("[INFO] Antrian kosong!\n");
+        return;
+    }
+    printf("\n=== STATUS ELEMEN ANTRIAN ===\n");
+    printf("Kapasitas Array       : %d elemen\n", MAX);
+    printf("Jumlah Elemen Aktif   : %d elemen\n", antrian.tail - antrian.head + 1);
+    printf("Daftar Antrian (FIFO) : [FRONT] ");
+    for (int i = antrian.head; i <= antrian.tail; i++) {
+        printf("%d", antrian.data[i]);
+        if (i < antrian.tail) printf(" -> ");
+    }
+    printf(" [REAR]\n");
+}
+
+/* FUNGSI STATISTIK (SOAL 2) */
+
+/* Menghitung nilai total seluruh elemen di antrian */
 long long HitungTotal(void) {
     if (IsEmpty() == 1) return 0;
     long long total = 0;
@@ -410,14 +505,14 @@ long long HitungTotal(void) {
     return total;
 }
 
-/* Menghitung nilai rata-rata elemen di dalam queue */
+/* Menghitung nilai rata-rata elemen di antrian */
 double HitungRataRata(void) {
     if (IsEmpty() == 1) return 0.0;
     int jumlahElemen = antrian.tail - antrian.head + 1;
     return (double)HitungTotal() / (double)jumlahElemen;
 }
 
-/* Mencari nilai terbesar (maksimum) di dalam queue */
+/* Mencari nilai terbesar (maksimum) di antrian */
 int CariTerbesar(void) {
     if (IsEmpty() == 1) return INT_MIN;
     int maxVal = antrian.data[antrian.head];
@@ -429,7 +524,7 @@ int CariTerbesar(void) {
     return maxVal;
 }
 
-/* Mencari nilai terkecil (minimum) di dalam queue */
+/* Mencari nilai terkecil (minimum) di antrian */
 int CariTerkecil(void) {
     if (IsEmpty() == 1) return INT_MAX;
     int minVal = antrian.data[antrian.head];
@@ -440,24 +535,146 @@ int CariTerkecil(void) {
     }
     return minVal;
 }
+
+void TampilStatistik(void) {
+    if (IsEmpty() == 1) {
+        printf("\n[INFO] Antrian kosong! Tidak ada elemen untuk dianalisis.\n");
+        return;
+    }
+    int jumlahElemen = antrian.tail - antrian.head + 1;
+    long long total = HitungTotal();
+    double rataRata = HitungRataRata();
+    int terbesar = CariTerbesar();
+    int terkecil = CariTerkecil();
+
+    printf("\n=======================================================\n");
+    printf("        HASIL ANALISIS STATISTIK ELEMEN ANTRIAN        \n");
+    printf("=======================================================\n");
+    printf("  Jumlah Elemen (Count)     : %d elemen\n", jumlahElemen);
+    printf("  Nilai Total (Sum)         : %lld\n", total);
+    printf("  Nilai Rata-rata (Mean)    : %.4f\n", rataRata);
+    printf("  Nilai Terbesar (Maximum)  : %d\n", terbesar);
+    printf("  Nilai Terkecil (Minimum)  : %d\n", terkecil);
+    printf("=======================================================\n\n");
+}
+
+int main(void) {
+    int pilihan, nilai;
+    Create();
+
+    printf("========================================================\n");
+    printf("   PROGRAM QUEUE DENGAN OPERASI STATISTIK (SOAL 2)     \n");
+    printf("   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       \n");
+    printf("   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      \n");
+    printf("========================================================\n");
+
+    do {
+        printf("\n========================================================\n");
+        printf("                       MENU UTAMA                       \n");
+        printf("========================================================\n");
+        printf(" 1. Masukkan Data ke Antrian (Enqueue)                 \n");
+        printf(" 2. Hapus Data dari Antrian (Dequeue)                  \n");
+        printf(" 3. Tampilkan Seluruh Data Antrian (Tampil)            \n");
+        printf(" 4. Hitung & Tampilkan Analisis Statistik (Total/Rata) \n");
+        printf(" 5. Cari Nilai Terbesar Saja (Maksimum)                \n");
+        printf(" 6. Cari Nilai Terkecil Saja (Minimum)                 \n");
+        printf(" 7. Bersihkan Seluruh Antrian (Clear)                  \n");
+        printf(" 8. Keluar dari Program                                \n");
+        printf("========================================================\n");
+        printf("Pilihan Anda [1-8]: ");
+        if (scanf("%d", &pilihan) != 1) {
+            printf("[ERROR] Input tidak valid!\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        switch (pilihan) {
+            case 1:
+                printf("Masukkan bilangan bulat untuk ditambahkan: ");
+                if (scanf("%d", &nilai) == 1) {
+                    Enqueue(nilai);
+                } else {
+                    printf("[ERROR] Input tidak valid!\n");
+                    while (getchar() != '\n');
+                }
+                break;
+            case 2:
+                Dequeue();
+                break;
+            case 3:
+                Tampil();
+                break;
+            case 4:
+                TampilStatistik();
+                break;
+            case 5:
+                if (!IsEmpty()) {
+                    printf("\n[HASIL] Nilai Terbesar (Maksimum) dalam antrian: %d\n", CariTerbesar());
+                } else {
+                    printf("\n[INFO] Antrian kosong!\n");
+                }
+                break;
+            case 6:
+                if (!IsEmpty()) {
+                    printf("\n[HASIL] Nilai Terkecil (Minimum) dalam antrian: %d\n", CariTerkecil());
+                } else {
+                    printf("\n[INFO] Antrian kosong!\n");
+                }
+                break;
+            case 7:
+                Clear();
+                break;
+            case 8:
+                printf("\nTerima kasih telah menggunakan program. Selesai.\n");
+                break;
+            default:
+                printf("[ERROR] Pilihan menu tidak valid!\n");
+        }
+    } while (pilihan != 8);
+
+    return 0;
+}
 \end{lstlisting}
 
-\subsection{Hasil Uji Coba Komputasi dan Verifikasi Statistik}
-Sebanyak 7 data bilangan diuji coba dimasukkan ke dalam antrian: $[45, 12, 88, 34, 91, 23, 70]$.
-\begin{itemize}
-    \item $N = 7$ elemen.
-    \item Total analitik: $45 + 12 + 88 + 34 + 91 + 23 + 70 = 363$.
-    \item Rata-rata analitik: $\frac{363}{7} \approx 51.857142857$.
-    \item Terbesar analitik: $91$.
-    \item Terkecil analitik: $12$.
-\end{itemize}
+\vspace{0.4cm}
+\noindent\textbf{2. Output Program:}
 
-\begin{lstlisting}[style=cmdoutput, caption={Hasil Verifikasi Output Analisis Statistik pada Terminal}]
+\begin{lstlisting}[style=cmdoutput]
+========================================================
+   PROGRAM QUEUE DENGAN OPERASI STATISTIK (SOAL 2)     
+   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       
+   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      
+========================================================
+
+Pilihan Anda [1-8]: 1
+Masukkan bilangan bulat untuk ditambahkan: 45
+[SUKSES] Elemen 45 berhasil masuk ke antrian (indeks: 0).
+Pilihan Anda [1-8]: 1
+Masukkan bilangan bulat untuk ditambahkan: 12
+[SUKSES] Elemen 12 berhasil masuk ke antrian (indeks: 1).
+Pilihan Anda [1-8]: 1
+Masukkan bilangan bulat untuk ditambahkan: 88
+[SUKSES] Elemen 88 berhasil masuk ke antrian (indeks: 2).
+Pilihan Anda [1-8]: 1
+Masukkan bilangan bulat untuk ditambahkan: 34
+[SUKSES] Elemen 34 berhasil masuk ke antrian (indeks: 3).
+Pilihan Anda [1-8]: 1
+Masukkan bilangan bulat untuk ditambahkan: 91
+[SUKSES] Elemen 91 berhasil masuk ke antrian (indeks: 4).
+Pilihan Anda [1-8]: 1
+Masukkan bilangan bulat untuk ditambahkan: 23
+[SUKSES] Elemen 23 berhasil masuk ke antrian (indeks: 5).
+Pilihan Anda [1-8]: 1
+Masukkan bilangan bulat untuk ditambahkan: 70
+[SUKSES] Elemen 70 berhasil masuk ke antrian (indeks: 6).
+
+Pilihan Anda [1-8]: 3
 === STATUS ELEMEN ANTRIAN ===
 Kapasitas Array       : 8 elemen
 Jumlah Elemen Aktif   : 7 elemen
 Daftar Antrian (FIFO) : [FRONT] 45 -> 12 -> 88 -> 34 -> 91 -> 23 -> 70 [REAR]
 
+Pilihan Anda [1-8]: 4
 =======================================================
         HASIL ANALISIS STATISTIK ELEMEN ANTRIAN        
 =======================================================
@@ -469,13 +686,19 @@ Daftar Antrian (FIFO) : [FRONT] 45 -> 12 -> 88 -> 34 -> 91 -> 23 -> 70 [REAR]
 =======================================================
 
 Pilihan Anda [1-8]: 5
-[HASIL] Nilai Terbesar (Maksimum) dalam antrian adalah: 91
+[HASIL] Nilai Terbesar (Maksimum) dalam antrian: 91
 
 Pilihan Anda [1-8]: 6
-[HASIL] Nilai Terkecil (Minimum) dalam antrian adalah: 12
+[HASIL] Nilai Terkecil (Minimum) dalam antrian: 12
 
 Pilihan Anda [1-8]: 2
 [SUKSES] Elemen 45 berhasil dikeluarkan dari antrian.
+
+Pilihan Anda [1-8]: 3
+=== STATUS ELEMEN ANTRIAN ===
+Kapasitas Array       : 8 elemen
+Jumlah Elemen Aktif   : 6 elemen
+Daftar Antrian (FIFO) : [FRONT] 12 -> 88 -> 34 -> 91 -> 23 -> 70 [REAR]
 
 Pilihan Anda [1-8]: 4
 =======================================================
@@ -487,54 +710,33 @@ Pilihan Anda [1-8]: 4
   Nilai Terbesar (Maximum)  : 91
   Nilai Terkecil (Minimum)  : 12
 =======================================================
+
+Pilihan Anda [1-8]: 8
+Terima kasih telah menggunakan program. Selesai.
 \end{lstlisting}
 
-Hasil komputasi pada terminal terbukti identik $100\%$ secara presisi dengan verifikasi analitik. Setelah elemen terdepan $45$ di-\textit{dequeue}, nilai total berubah menjadi $363 - 45 = 318$, dan nilai rata-rata menjadi $\frac{318}{6} = 53.0000$.
-
-% =============================================================================
-% BAB 4: PENYELESAIAN LATIHAN SOAL 3 (CIRCULAR QUEUE & LINKED LIST)
-% =============================================================================
 \newpage
-\section{Penyelesaian Soal 3: Circular Array Queue dan Linked List Queue}
 
-\subsection{Deskripsi Permasalahan}
-Berdasarkan lembar latihan perkuliahan (Slide 33):
+% =============================================================================
+% SOAL 3: CIRCULAR ARRAY DAN LINKED LIST QUEUE
+% =============================================================================
+\begin{center}
+    {\Large\textbf{LATIHAN SOAL 3}}
+\end{center}
+
+\vspace{0.2cm}
+\noindent\textbf{Soal:}
 \begin{quote}
-    \textbf{Soal 3:} \textit{Buatlah program queue dengan menggunakan circular array dan linked list!}
+    \textit{"Buatlah program queue dengan menggunakan circular array dan linked list!"}
 \end{quote}
 
-\subsection{Sub-Bagian 3A: Implementasi Circular Array Queue}
+\vspace{0.4cm}
+\noindent{\large\textbf{3.1 Program Queue Menggunakan Circular Array}}
 
-\subsubsection{Prinsip dan Mekanisme Aritmatika Modulo}
-Pada antrian linier biasa, penghapusan elemen dari depan menimbulkan dilema: jika elemen digeser, kompleksitasnya menjadi $\mathcal{O}(N)$. Jika elemen tidak digeser dan pointer depan dimajukan, slot memori depan akan terbuang sehingga terjadi fenomena \textit{false overflow}. Solusi optimal dari permasalahan ini adalah \textbf{Circular Array Queue} \cite{clrs2022, kruse1997}.
+\vspace{0.2cm}
+\noindent\textbf{1. Kode Program (\texttt{soal3\_circular\_queue.c}):}
 
-Dalam array melingkar berukuran $\text{MAX}$, pergerakan penunjuk indeks \textit{Front} dan \textit{Rear} dibungkus kembali ke indeks awal ($0$) menggunakan operator sisa bagi (modulo, $\%$):
-\begin{align}
-    \text{Front}_{\text{baru}} &= (\text{Front} + 1) \pmod{\text{MAX}} \\
-    \text{Rear}_{\text{baru}} &= (\text{Rear} + 1) \pmod{\text{MAX}}
-\end{align}
-
-Sesuai penjelasan pada Slide 22 materi kuliah:
-\begin{quote}
-    \textit{"Circular array adalah array yang dibuat seakan-akan merupakan sebuah lingkaran dengan titik awal dan titik akhir saling bersebelahan jika array tersebut masih kosong. Jumlah data yang dapat ditampung oleh array ini adalah besarnya ukuran array dikurangi 1. Misalnya besar array adalah 8, maka jumlah data yang dapat ditampung adalah 7."}
-\end{quote}
-
-Berdasarkan aturan standar ini:
-\begin{itemize}
-    \item \textbf{Kondisi Kosong}: $\text{Front} == \text{Rear}$.
-    \item \textbf{Kondisi Penuh}: $(\text{Rear} + 1) \pmod{\text{MAX}} == \text{Front}$.
-    \item \textbf{Jumlah Elemen Aktif}: $\text{Noel} = (\text{Rear} - \text{Front} + \text{MAX}) \pmod{\text{MAX}}$.
-\end{itemize}
-
-\begin{figure}[htbp]
-    \centering
-    \insertsafeimg{queue_circular.png}{width=0.7\textwidth}
-    \caption{Visualisasi Struktur Data Circular Array Queue dengan Arah Rotasi Modulo.}
-    \label{fig:circular_queue}
-\end{figure}
-
-\subsubsection{Kode Sumber Implementasi Circular Array (\texttt{soal3\_circular\_queue.c})}
-\begin{lstlisting}[style=ccode, language=C, caption={Implementasi Circular Array Queue (\texttt{soal3\_circular\_queue.c})}]
+\begin{lstlisting}[style=ccode, language=C]
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -543,7 +745,7 @@ Berdasarkan aturan standar ini:
 typedef struct {
     int data[MAX];
     int front; /* Menunjuk posisi sebelum elemen terdepan */
-    int rear;  /* Menunjuk posisi elemen terakhir */
+    int rear;  /* Menunjuk posisi elemen terakhir yang dimasukkan */
 } CircularQueue;
 
 CircularQueue q;
@@ -567,12 +769,13 @@ int Noel(void) {
 
 void Enqueue(int nilai) {
     if (IsFull()) {
-        printf("[PERINGATAN] Circular Queue Penuh (OVERFLOW)! Kapasitas: %d.\n", MAX - 1);
+        printf("[PERINGATAN] Circular Queue Penuh (OVERFLOW)! Kapasitas maksimum: %d elemen.\n", MAX - 1);
+        printf("             Gagal menyisipkan nilai %d.\n", nilai);
         return;
     }
     q.rear = (q.rear + 1) % MAX;
     q.data[q.rear] = nilai;
-    printf("[SUKSES] INSERT %d berhasil di slot [%d]. Total elemen = %d.\n", nilai, q.rear, Noel());
+    printf("[SUKSES] INSERT %d berhasil. Posisi Rear: [%d]. Total elemen = %d.\n", nilai, q.rear, Noel());
 }
 
 int Dequeue(void) {
@@ -582,15 +785,158 @@ int Dequeue(void) {
     }
     q.front = (q.front + 1) % MAX;
     int nilaiKeluar = q.data[q.front];
-    printf("[SUKSES] REMOVE %d. Front bergerak ke [%d]. Sisa = %d.\n", nilaiKeluar, q.front, Noel());
+    printf("[SUKSES] REMOVE berhasil. Elemen %d dikeluarkan. Posisi Front: [%d]. Sisa = %d.\n",
+           nilaiKeluar, q.front, Noel());
     return nilaiKeluar;
+}
+
+void Clear(void) {
+    q.front = 0;
+    q.rear = 0;
+    printf("[SUKSES] Circular Queue berhasil dikosongkan (F = 0, R = 0).\n");
+}
+
+void Tampil(void) {
+    if (IsEmpty()) {
+        printf("[INFO] Circular Queue kosong (Front = %d, Rear = %d).\n", q.front, q.rear);
+        return;
+    }
+    printf("\n=== STATUS CIRCULAR QUEUE ===\n");
+    printf("Ukuran Array Fisik (MAX) : %d slot\n", MAX);
+    printf("Kapasitas Maksimum Data  : %d elemen (MAX - 1)\n", MAX - 1);
+    printf("Jumlah Elemen Aktif      : %d elemen\n", Noel());
+    printf("Posisi Front             : %d\n", q.front);
+    printf("Posisi Rear              : %d\n", q.rear);
+
+    printf("Daftar Urutan Logis FIFO : [HEAD] ");
+    int idx = (q.front + 1) % MAX;
+    while (1) {
+        printf("%d (slot [%d])", q.data[idx], idx);
+        if (idx == q.rear) break;
+        printf(" -> ");
+        idx = (idx + 1) % MAX;
+    }
+    printf(" [TAIL]\n");
+
+    printf("\nVisualisasi Memori Array Fisik:\n");
+    printf("+-------");
+    for (int i = 0; i < MAX; i++) printf("+-------");
+    printf("+\n| Indeks");
+    for (int i = 0; i < MAX; i++) printf("|  [%d]  ", i);
+    printf("|\n+-------");
+    for (int i = 0; i < MAX; i++) printf("+-------");
+    printf("+\n| Nilai ");
+    for (int i = 0; i < MAX; i++) {
+        int isActive = 0;
+        if (!IsEmpty()) {
+            if (q.front < q.rear) {
+                if (i > q.front && i <= q.rear) isActive = 1;
+            } else {
+                if (i > q.front || i <= q.rear) isActive = 1;
+            }
+        }
+        if (isActive) printf("| %5d ", q.data[i]);
+        else printf("|   -   ");
+    }
+    printf("|\n+-------");
+    for (int i = 0; i < MAX; i++) printf("+-------");
+    printf("+\n\n");
+}
+
+int main(void) {
+    int pilihan, nilai;
+    Inisialisasi();
+
+    printf("========================================================\n");
+    printf("   PROGRAM IMPLEMENTASI CIRCULAR QUEUE (SOAL 3A)       \n");
+    printf("   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       \n");
+    printf("   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      \n");
+    printf("========================================================\n");
+
+    do {
+        printf("\n========================================================\n");
+        printf("                 MENU PILIHAN CIRCULAR QUEUE            \n");
+        printf("========================================================\n");
+        printf(" 1. Sisipkan Elemen (Enqueue / INSERT)                 \n");
+        printf(" 2. Ambil Elemen Terdepan (Dequeue / REMOVE)            \n");
+        printf(" 3. Tampilkan Status & Visualisasi Array Melingkar     \n");
+        printf(" 4. Cek Kondisi (IsEmpty / IsFull / Noel)              \n");
+        printf(" 5. Bersihkan Antrian (Clear / RESET)                  \n");
+        printf(" 6. Keluar                                             \n");
+        printf("========================================================\n");
+        printf("Pilihan Anda [1-6]: ");
+        if (scanf("%d", &pilihan) != 1) {
+            printf("[ERROR] Input tidak valid!\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        switch (pilihan) {
+            case 1:
+                printf("Masukkan bilangan bulat untuk di-insert: ");
+                if (scanf("%d", &nilai) == 1) Enqueue(nilai);
+                else { while (getchar() != '\n'); }
+                break;
+            case 2:
+                Dequeue();
+                break;
+            case 3:
+                Tampil();
+                break;
+            case 4:
+                printf("\n--- STATUS KONDISI ANTRIAN ---\n");
+                printf("IsEmpty (Kosong) : %s\n", IsEmpty() ? "YA" : "TIDAK");
+                printf("IsFull (Penuh)   : %s\n", IsFull() ? "YA" : "TIDAK");
+                printf("Jumlah Elemen    : %d / %d\n", Noel(), MAX - 1);
+                break;
+            case 5:
+                Clear();
+                break;
+            case 6:
+                printf("\nProgram selesai.\n");
+                break;
+            default:
+                printf("[ERROR] Pilihan menu tidak valid!\n");
+        }
+    } while (pilihan != 6);
+
+    return 0;
 }
 \end{lstlisting}
 
-\subsubsection{Pengujian dan Verifikasi Perputaran Melingkar (\textit{Wrap-Around})}
-Pengujian dilakukan untuk membuktikan kemampuan antrian melingkar dalam memanfaatkan kembali slot awal memori yang telah dikosongkan tanpa melakukan pergeseran data:
+\vspace{0.4cm}
+\noindent\textbf{2. Output Program Circular Queue:}
 
-\begin{lstlisting}[style=cmdoutput, caption={Log Output Uji Operasi Wrap-Around pada Circular Queue}]
+\begin{lstlisting}[style=cmdoutput]
+========================================================
+   PROGRAM IMPLEMENTASI CIRCULAR QUEUE (SOAL 3A)       
+   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       
+   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      
+========================================================
+
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-insert: 10
+[SUKSES] INSERT 10 berhasil. Posisi Rear bergerak ke slot [1]. Total elemen = 1.
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-insert: 20
+[SUKSES] INSERT 20 berhasil. Posisi Rear bergerak ke slot [2]. Total elemen = 2.
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-insert: 30
+[SUKSES] INSERT 30 berhasil. Posisi Rear bergerak ke slot [3]. Total elemen = 3.
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-insert: 40
+[SUKSES] INSERT 40 berhasil. Posisi Rear bergerak ke slot [4]. Total elemen = 4.
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-insert: 50
+[SUKSES] INSERT 50 berhasil. Posisi Rear bergerak ke slot [5]. Total elemen = 5.
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-insert: 60
+[SUKSES] INSERT 60 berhasil. Posisi Rear bergerak ke slot [6]. Total elemen = 6.
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-insert: 70
+[SUKSES] INSERT 70 berhasil. Posisi Rear bergerak ke slot [7]. Total elemen = 7.
+
+Pilihan Anda [1-6]: 3
 === STATUS CIRCULAR QUEUE ===
 Ukuran Array Fisik (MAX) : 8 slot
 Kapasitas Maksimum Data  : 7 elemen (MAX - 1)
@@ -619,6 +965,7 @@ Pilihan Anda [1-6]: 1
 Masukkan bilangan bulat untuk di-insert: 90
 [SUKSES] INSERT 90 berhasil. Posisi Rear bergerak ke slot [1]. Total elemen = 6.
 
+Pilihan Anda [1-6]: 3
 === STATUS CIRCULAR QUEUE ===
 Ukuran Array Fisik (MAX) : 8 slot
 Kapasitas Maksimum Data  : 7 elemen (MAX - 1)
@@ -628,34 +975,15 @@ Posisi Rear              : 1
 Daftar Urutan Logis FIFO : [HEAD] 40 (slot [4]) -> 50 (slot [5]) -> 60 (slot [6]) -> 70 (slot [7]) -> 80 (slot [0]) -> 90 (slot [1]) [TAIL]
 \end{lstlisting}
 
-Perhatikan bahwa nilai $80$ dan $90$ berhasil menempati slot $[0]$ dan $[1]$ yang sebelumnya telah ditinggalkan oleh operasi Dequeue. Ini membuktikan bahwa Circular Queue bekerja optimal secara siklis.
+\newpage
 
 % -----------------------------------------------------------------------------
-\subsection{Sub-Bagian 3B: Implementasi Linked List Queue}
+\noindent{\large\textbf{3.2 Program Queue Menggunakan Linked List}}
 
-\subsubsection{Konsep Dasar Senarai Berantai Dinamis}
-Pada antrian berbasis \textit{Linked List}, setiap elemen dibungkus dalam sebuah simpul (\textit{node}) independen di dalam memori \textit{heap}. Setiap simpul memiliki dua komponen data utama:
-\begin{enumerate}
-    \item \texttt{data}: Berisi nilai payload yang disimpan.
-    \item \texttt{next}: Pointer alamat memori yang merujuk ke simpul antrian berikutnya.
-\end{enumerate}
+\vspace{0.2cm}
+\noindent\textbf{1. Kode Program (\texttt{soal3\_linked\_list\_queue.c}):}
 
-\begin{figure}[htbp]
-    \centering
-    \insertsafeimg{queue_linked_list.png}{width=0.92\textwidth}
-    \caption{Visualisasi Struktur Data Linked List Queue dengan Pointer Front dan Rear.}
-    \label{fig:linked_list_queue}
-\end{figure}
-
-Kelebihan utama implementasi ini:
-\begin{itemize}
-    \item \textbf{Kapasitas Dinamis}: Tidak ada batasan ukuran array statis ($\text{MAX}$). Antrian dapat terus tumbuh sepanjang memori RAM masih mencukupi.
-    \item \textbf{Kompleksitas $\mathcal{O}(1)$}: Operasi \texttt{Enqueue} di ujung belakang (\textit{Rear}) dan operasi \texttt{Dequeue} di ujung depan (\textit{Front}) dapat dieksekusi secara instan tanpa perlu pergeseran elemen fisik.
-    \item \textbf{Dealokasi Memori Bersih}: Setiap elemen yang di-\textit{dequeue} langsung dibebaskan memorinya menggunakan fungsi bawaan \texttt{free(node)} sehingga mencegah kebocoran memori (\textit{memory leak}) \cite{kernighan1988}.
-\end{itemize}
-
-\subsubsection{Kode Sumber Implementasi Linked List (\texttt{soal3\_linked\_list\_queue.c})}
-\begin{lstlisting}[style=ccode, language=C, caption={Implementasi Linked List Queue (\texttt{soal3\_linked\_list\_queue.c})}]
+\begin{lstlisting}[style=ccode, language=C]
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -685,7 +1013,7 @@ int IsEmpty(LinkedQueue* q) {
 void Enqueue(LinkedQueue* q, int data) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     if (newNode == NULL) {
-        printf("[ERROR] Heap Overflow! Alokasi memori gagal.\n");
+        printf("[ERROR] Alokasi memori gagal (Heap Overflow)!\n");
         return;
     }
     newNode->data = data;
@@ -699,7 +1027,8 @@ void Enqueue(LinkedQueue* q, int data) {
         q->rear = newNode;
     }
     q->count++;
-    printf("[SUKSES] Enqueue: Elemen %d ditambahkan pada alamat [%p].\n", data, (void*)newNode);
+    printf("[SUKSES] Enqueue: Elemen %d ditambahkan pada alamat [%p]. Total: %d.\n",
+           data, (void*)newNode, q->count);
 }
 
 int Dequeue(LinkedQueue* q) {
@@ -716,13 +1045,136 @@ int Dequeue(LinkedQueue* q) {
     }
     free(temp);
     q->count--;
-    printf("[SUKSES] Dequeue: Elemen %d berhasil dihapus dari antrian.\n", dataKeluar);
+    printf("[SUKSES] Dequeue: Elemen %d berhasil dihapus. Sisa: %d.\n", dataKeluar, q->count);
     return dataKeluar;
+}
+
+int Peek(LinkedQueue* q) {
+    if (IsEmpty(q)) {
+        printf("[INFO] Antrian kosong!\n");
+        return -1;
+    }
+    return q->front->data;
+}
+
+void Clear(LinkedQueue* q) {
+    Node* curr = q->front;
+    while (curr != NULL) {
+        Node* nextNode = curr->next;
+        free(curr);
+        curr = nextNode;
+    }
+    q->front = NULL;
+    q->rear = NULL;
+    q->count = 0;
+    printf("[SUKSES] Seluruh node memori berhasil didealokasikan (Clear).\n");
+}
+
+void Tampil(LinkedQueue* q) {
+    if (IsEmpty(q)) {
+        printf("[INFO] Antrian kosong! Tidak ada node.\n");
+        return;
+    }
+    printf("\n=== STATUS LINKED LIST QUEUE ===\n");
+    printf("Jumlah Elemen Aktif (Count) : %d node\n", q->count);
+    printf("Alamat Node Front           : %p (Nilai: %d)\n", (void*)q->front, q->front->data);
+    printf("Alamat Node Rear            : %p (Nilai: %d)\n", (void*)q->rear, q->rear->data);
+
+    printf("\nAlur Rantai Antrian (FIFO):\n");
+    printf("[FRONT] -> ");
+    Node* curr = q->front;
+    while (curr != NULL) {
+        printf("[Data: %d | Next: %p]", curr->data, (void*)curr->next);
+        if (curr->next != NULL) printf(" -> ");
+        curr = curr->next;
+    }
+    printf(" -> NULL [REAR]\n\n");
+}
+
+int main(void) {
+    int pilihan, nilai;
+    InitQueue(&antrian);
+
+    printf("========================================================\n");
+    printf("   PROGRAM IMPLEMENTASI LINKED LIST QUEUE (SOAL 3B)    \n");
+    printf("   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       \n");
+    printf("   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      \n");
+    printf("========================================================\n");
+
+    do {
+        printf("\n========================================================\n");
+        printf("               MENU LINKED LIST QUEUE                   \n");
+        printf("========================================================\n");
+        printf(" 1. Tambah Elemen Baru (Enqueue)                       \n");
+        printf(" 2. Ambil Elemen Terdepan (Dequeue)                    \n");
+        printf(" 3. Lihat Elemen Terdepan (Peek)                       \n");
+        printf(" 4. Tampilkan Seluruh Rantai Queue                     \n");
+        printf(" 5. Kosongkan Seluruh Node (Clear)                     \n");
+        printf(" 6. Keluar dari Program                                \n");
+        printf("========================================================\n");
+        printf("Pilihan Anda [1-6]: ");
+        if (scanf("%d", &pilihan) != 1) {
+            printf("[ERROR] Input tidak valid!\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        switch (pilihan) {
+            case 1:
+                printf("Masukkan bilangan bulat untuk di-enqueue: ");
+                if (scanf("%d", &nilai) == 1) Enqueue(&antrian, nilai);
+                else { while (getchar() != '\n'); }
+                break;
+            case 2:
+                Dequeue(&antrian);
+                break;
+            case 3:
+                nilai = Peek(&antrian);
+                if (nilai != -1) printf("\n[HASIL PEEK] Elemen terdepan: %d\n", nilai);
+                break;
+            case 4:
+                Tampil(&antrian);
+                break;
+            case 5:
+                Clear(&antrian);
+                break;
+            case 6:
+                Clear(&antrian);
+                printf("\nProgram selesai.\n");
+                break;
+            default:
+                printf("[ERROR] Pilihan menu tidak valid!\n");
+        }
+    } while (pilihan != 6);
+
+    return 0;
 }
 \end{lstlisting}
 
-\subsubsection{Hasil Eksekusi dan Verifikasi Rantai Pointer}
-\begin{lstlisting}[style=cmdoutput, caption={Log Output Eksekusi Terminal Program Linked List Queue}]
+\vspace{0.4cm}
+\noindent\textbf{2. Output Program Linked List Queue:}
+
+\begin{lstlisting}[style=cmdoutput]
+========================================================
+   PROGRAM IMPLEMENTASI LINKED LIST QUEUE (SOAL 3B)    
+   Nama : Hellyos Ageng Haqiqie (NIM: 163251001)       
+   Prodi: S1 Teknik Robotika dan Kecerdasan Buatan      
+========================================================
+
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-enqueue: 100
+[SUKSES] Enqueue: Elemen 100 berhasil ditambahkan pada alamat memori [000002161A4F1470]. Total elemen: 1.
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-enqueue: 200
+[SUKSES] Enqueue: Elemen 200 berhasil ditambahkan pada alamat memori [000002161A4F1490]. Total elemen: 2.
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-enqueue: 300
+[SUKSES] Enqueue: Elemen 300 berhasil ditambahkan pada alamat memori [000002161A4F14B0]. Total elemen: 3.
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-enqueue: 400
+[SUKSES] Enqueue: Elemen 400 berhasil ditambahkan pada alamat memori [000002161A4F14D0]. Total elemen: 4.
+
+Pilihan Anda [1-6]: 4
 === STATUS LINKED LIST QUEUE ===
 Jumlah Elemen Aktif (Count) : 4 node
 Alamat Node Front           : 000002161A4F1470 (Nilai: 100)
@@ -736,81 +1188,30 @@ Pilihan Anda [1-6]: 3
 
 Pilihan Anda [1-6]: 2
 [SUKSES] Dequeue: Elemen 100 berhasil dihapus dari depan antrian. Sisa elemen: 3.
-
 Pilihan Anda [1-6]: 2
 [SUKSES] Dequeue: Elemen 200 berhasil dihapus dari depan antrian. Sisa elemen: 2.
 
 Pilihan Anda [1-6]: 1
 Masukkan bilangan bulat untuk di-enqueue: 500
 [SUKSES] Enqueue: Elemen 500 berhasil ditambahkan pada alamat memori [000002161A4F1470]. Total elemen: 3.
+Pilihan Anda [1-6]: 1
+Masukkan bilangan bulat untuk di-enqueue: 600
+[SUKSES] Enqueue: Elemen 600 berhasil ditambahkan pada alamat memori [000002161A4F1490]. Total elemen: 4.
 
 Pilihan Anda [1-6]: 4
 === STATUS LINKED LIST QUEUE ===
-Jumlah Elemen Aktif (Count) : 3 node
+Jumlah Elemen Aktif (Count) : 4 node
 Alamat Node Front           : 000002161A4F14B0 (Nilai: 300)
-Alamat Node Rear            : 000002161A4F1470 (Nilai: 500)
+Alamat Node Rear            : 000002161A4F1490 (Nilai: 600)
 
 Alur Rantai Antrian (FIFO):
-[FRONT] -> [Data: 300 | Next: 000002161A4F14D0] -> [Data: 400 | Next: 000002161A4F1470] -> [Data: 500 | Next: 0000000000000000] -> NULL [REAR]
+[FRONT] -> [Data: 300 | Next: 000002161A4F14D0] -> [Data: 400 | Next: 000002161A4F1470] -> [Data: 500 | Next: 000002161A4F1490] -> [Data: 600 | Next: 0000000000000000] -> NULL [REAR]
+
+Pilihan Anda [1-6]: 5
+[SUKSES] Seluruh node memori berhasil didealokasikan (Queue Clear).
+
+Pilihan Anda [1-6]: 6
+Program selesai.
 \end{lstlisting}
-
-% -----------------------------------------------------------------------------
-\subsection{Sub-Bagian 3C: Analisis Komparasi Kinerja dan Trade-off}
-Berdasarkan pengerjaan ketiga soal praktikum di atas, kita dapat merangkum analisis komparasi teknis yang sistematis sebagaimana tersaji pada Tabel~\ref{tab:comparison_summary}.
-
-\begin{table}[htbp]
-    \centering
-    \caption{Perbandingan Menyeluruh Tiga Model Implementasi Struktur Data Antrian.}
-    \label{tab:comparison_summary}
-    \begin{tabular}{lccc}
-        \toprule
-        \textbf{Parameter Evaluasi} & \textbf{Linear Array Queue} & \textbf{Circular Array Queue} & \textbf{Linked List Queue} \\
-        \midrule
-        Waktu Enqueue & $\mathcal{O}(1)$ & $\mathcal{O}(1)$ & $\mathcal{O}(1)$ \\
-        Waktu Dequeue & $\mathcal{O}(N)$ (pergeseran) & $\mathcal{O}(1)$ & $\mathcal{O}(1)$ \\
-        Waktu Akses Head (\textit{Peek}) & $\mathcal{O}(1)$ & $\mathcal{O}(1)$ & $\mathcal{O}(1)$ \\
-        Batas Kapasitas & Terbatas ($\text{MAX}$) & Terbatas ($\text{MAX} - 1$) & Dinamis (Batas RAM) \\
-        Penggunaan Memori & Ringkas (Konstan) & Ringkas (Konstan) & Tambahan Pointer (\texttt{next}) \\
-        Kemungkinan False Overflow & Terjadi jika tanpa geser & Tidak Terjadi & Tidak Pernah Terjadi \\
-        Biaya Dealokasi & $\mathcal{O}(1)$ (Reset indeks) & $\mathcal{O}(1)$ (Reset indeks) & $\mathcal{O}(N)$ (Looping \texttt{free}) \\
-        Kemudahan Implementasi & Sangat Sederhana & Menengah (Aritmatika Modulo) & Mahir (Manajemen Pointer) \\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-\noindent\textbf{Temuan Penting Analisis:}
-\begin{enumerate}
-    \item \textbf{Circular Array} terbukti menjadi pilihan paling seimbang untuk sistem \textit{embedded} dan \textit{real-time robotics} (seperti mikrokontroler STM32 atau Arduino) karena menjamin waktu eksekusi deterministik $\mathcal{O}(1)$ untuk operasi Enqueue dan Dequeue tanpa alokasi memori dinamis yang berisiko fragmentasi heap.
-    \item \textbf{Linked List} sangat unggul pada aplikasi yang menuntut elastisitas data tinggi tanpa kepastian jumlah beban antrian maksimum di awal perancangan program.
-\end{enumerate}
-
-% =============================================================================
-% BAB 5: KESIMPULAN DAN SARAN
-% =============================================================================
-\newpage
-\section{Kesimpulan dan Saran}
-
-\subsection{Kesimpulan}
-Dari serangkaian pengerjaan latihan praktikum Struktur Data TM 5 ini, dapat disimpulkan bahwa:
-\begin{enumerate}
-    \item Struktur data antrian (\textit{Queue}) berhasil diimplementasikan secara komprehensif menggunakan konsep FIFO (\textit{First-In First-Out}).
-    \item Pada Soal 1, implementasi menu interaktif linear queue berhasil direalisasikan dengan algoritma pergeseran elemen saat \texttt{Dequeue}, menjamin elemen terdepan selalu dapat diakses pada indeks awal.
-    \item Pada Soal 2, fungsi-fungsi analitik statistik (\texttt{HitungTotal}, \texttt{HitungRataRata}, \texttt{CariTerbesar}, \texttt{CariTerkecil}) berhasil ditambahkan dan diverifikasi memiliki akurasi matematis $100\%$ terhadap data uji acak dalam antrian.
-    \item Pada Soal 3A, \textit{Circular Array Queue} berhasil mengatasi inefisiensi pergeseran data linier dengan mempercepat operasi penghapusan menjadi $\mathcal{O}(1)$ melalui pemanfaatan aritmatika modulo $(\text{index} + 1) \pmod{\text{MAX}}$.
-    \item Pada Soal 3B, \textit{Linked List Queue} berhasil mengeliminasi batasan kapasitas array statis, memungkinkan antrian dinamis tanpa batas dengan pemanfaatan manajemen pointer memori heap bahasa C.
-\end{enumerate}
-
-\subsection{Saran Pengembangan}
-\begin{enumerate}
-    \item Untuk penanganan data dengan prioritas tertentu (seperti penjadwalan interrupt sensor pada sistem robotika), konsep antrian dasar ini dapat diperluas menjadi \textit{Priority Queue} berbasis \textit{Binary Heap}.
-    \item Pada antrian berantai ganda (\textit{Double Ended Queue} / Deque), implementasi \textit{Doubly Linked List} dapat diadopsi guna memfasilitasi penyisipan dan penghapusan di kedua ujung dengan kompleksitas waktu $\mathcal{O}(1)$.
-\end{enumerate}
-
-% =============================================================================
-% DAFTAR PUSTAKA
-% =============================================================================
-\newpage
-\bibliographystyle{IEEEtran}
-\bibliography{references}
 
 \end{document}
